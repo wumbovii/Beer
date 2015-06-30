@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9B463AE31B2FCFE30047F81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B463AE21B2FCFE30047F81C /* AppDelegate.swift */; };
-		9B463AE51B2FCFE30047F81C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B463AE41B2FCFE30047F81C /* ViewController.swift */; };
 		9B463AEA1B2FCFE30047F81C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B463AE91B2FCFE30047F81C /* Images.xcassets */; };
 		9B463AED1B2FCFE30047F81C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B463AEB1B2FCFE30047F81C /* LaunchScreen.xib */; };
 		9B463AF91B2FCFE30047F81C /* BeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B463AF81B2FCFE30047F81C /* BeerTests.swift */; };
 		9B463B031B2FCFF90047F81C /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B463B021B2FCFF90047F81C /* BeerViewController.swift */; };
 		9B463B0B1B2FD53D0047F81C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B463B0A1B2FD53D0047F81C /* Main.storyboard */; };
+		9BD6604D1B34FA5A00C3AF07 /* ContactChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6604C1B34FA5A00C3AF07 /* ContactChooserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 		9B463ADD1B2FCFE30047F81C /* Beer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B463AE11B2FCFE30047F81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B463AE21B2FCFE30047F81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B463AE41B2FCFE30047F81C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B463AE91B2FCFE30047F81C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B463AEC1B2FCFE30047F81C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9B463AF21B2FCFE30047F81C /* BeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +37,7 @@
 		9B463AF81B2FCFE30047F81C /* BeerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTests.swift; sourceTree = "<group>"; };
 		9B463B021B2FCFF90047F81C /* BeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = SOURCE_ROOT; };
 		9B463B0A1B2FD53D0047F81C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9BD6604C1B34FA5A00C3AF07 /* ContactChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactChooserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				9B463B021B2FCFF90047F81C /* BeerViewController.swift */,
+				9BD6604C1B34FA5A00C3AF07 /* ContactChooserViewController.swift */,
 				9B463AE21B2FCFE30047F81C /* AppDelegate.swift */,
-				9B463AE41B2FCFE30047F81C /* ViewController.swift */,
 				9B463B0A1B2FD53D0047F81C /* Main.storyboard */,
 				9B463AE91B2FCFE30047F81C /* Images.xcassets */,
 				9B463AEB1B2FCFE30047F81C /* LaunchScreen.xib */,
@@ -215,9 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B463AE51B2FCFE30047F81C /* ViewController.swift in Sources */,
 				9B463AE31B2FCFE30047F81C /* AppDelegate.swift in Sources */,
 				9B463B031B2FCFF90047F81C /* BeerViewController.swift in Sources */,
+				9BD6604D1B34FA5A00C3AF07 /* ContactChooserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

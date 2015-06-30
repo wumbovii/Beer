@@ -9,12 +9,16 @@
 import UIKit
 import MessageUI
 import MapKit
+import AddressBook
+import AddressBookUI
 
-class BeerViewController: UIViewController, UINavigationControllerDelegate,  UITableViewDelegate, MFMessageComposeViewControllerDelegate, UITableViewDataSource, UITextFieldDelegate  {
+
+class BeerViewController: UIViewController, UINavigationControllerDelegate,  UITableViewDelegate, MFMessageComposeViewControllerDelegate, UITableViewDataSource, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate {
   //CLLocationManagerDelegate,
   
-  // View Controllers
+  // Controllers
   var messageComposer: MFMessageComposeViewController?
+  var personPicker: ABPeoplePickerNavigationController?
   var locationManager: CLLocationManager?
   
   // UIView Outlets
@@ -46,6 +50,12 @@ class BeerViewController: UIViewController, UINavigationControllerDelegate,  UIT
     //    messageComposer?.delegate = self
     //    messageComposer?.messageComposeDelegate = self
     
+    // People picker
+    personPicker = ABPeoplePickerNavigationController()
+    personPicker?.peoplePickerDelegate = self
+//    personPicker?.predicateForSelectionOfPerson = [NSPredicate predicateWithFormat:@"%K.@count > 1", ABPersonPhoneNumbersProperty]
+    var phoneProperty = NSNumber(int:kABPersonPhoneProperty)
+    personPicker?.displayedProperties = [phoneProperty]
   }
   
   override func didReceiveMemoryWarning() {
@@ -97,6 +107,30 @@ class BeerViewController: UIViewController, UINavigationControllerDelegate,  UIT
     }
   }
   
+  // MARK: - Contacts
+  @IBAction
+  func performPickPerson(sender: AnyObject) {
+    self.presentViewController(personPicker!, animated: true, completion: nil)
+  }
+  
+  func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+    println("hi")
+  }
+  
+  
+  func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!, property: ABPropertyID, identifier: ABMultiValueIdentifier) {
+    if (personPicker != peoplePicker) {
+      println("Error, wrong contacts controller")
+      return
+    }
+    let multiValue: ABMultiValueRef = ABRecordCopyValue(person, property).takeRetainedValue()
+    let index = ABMultiValueGetIndexForIdentifier(multiValue, identifier)
+    let email = ABMultiValueCopyValueAtIndex(multiValue, index).takeRetainedValue() as! String
+    
+    println("email = \(email)")
+    println(identifier)
+    println(person.phoneNumber)
+  }
   
   
 }
